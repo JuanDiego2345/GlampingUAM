@@ -22,7 +22,14 @@ class CabinController extends Controller
      */
     public function store(Request $request)
     {
-        $cabin = Cabin::create($request->all());
+
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:50',
+            'capacity' => 'required|integer|min:1',
+            'cabinLevel_id' => 'required|integer|min:0',
+        ]);
+
+        $cabin = Cabin::create($validatedData);
         return response()->json(['data' => $cabin], 201);
     }
 
@@ -48,8 +55,7 @@ class CabinController extends Controller
 
         // Actualizar la cabaña con los datos validados
         $cabin->update($validatedData);
-
-        // Redireccionar con un mensaje de éxito
+        
         return response()->json(['data' => $cabin], 200);
     }
 
