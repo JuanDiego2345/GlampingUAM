@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('cabins', function (Blueprint $table) {
             $table->id();
             $table->String('name', 40);
-            $table->foreignId('cabinLevelid_id');
+            $table->foreignId('cabinLevel_id');
             $table->integer('capacity')->unsigned();
             $table->timestamps();
 
-            $table->foreign('cabinLevelid_id') 
+            $table->foreign('cabinLevel_id') 
                 ->references('id')->on('cabin_levels')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');

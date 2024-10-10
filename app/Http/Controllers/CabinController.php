@@ -7,6 +7,8 @@ use App\Models\Cabin;
 
 class CabinController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
@@ -20,7 +22,8 @@ class CabinController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cabin = Cabin::create($request->all());
+        return response()->json(['data' => $cabin], 201);
     }
 
     /**
@@ -36,7 +39,18 @@ class CabinController extends Controller
      */
     public function update(Request $request, Cabin $cabin)
     {
-        //
+        // Validar los datos de entrada
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:50',
+            'capacity' => 'required|integer|min:1',
+            'cabinLevel_id' => 'required|integer|min:0',
+        ]);
+
+        // Actualizar la cabaña con los datos validados
+        $cabin->update($validatedData);
+
+        // Redireccionar con un mensaje de éxito
+        return response()->json(['data' => $cabin], 200);
     }
 
     /**
@@ -44,6 +58,7 @@ class CabinController extends Controller
      */
     public function destroy(Cabin $cabin)
     {
-        //
+        $cabin->delete();
+        return response()->json(null, 204);
     }
 }
