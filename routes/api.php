@@ -7,12 +7,12 @@ use App\Http\Controllers\CabinController;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-Route::get('/hola/locos', 
-        [CabinController::class, 
-        'index']) -> name('hola.locos');
+// Route::get('/hola/locos', 
+//         [CabinController::class, 
+//         'index']) -> name('hola.locos');
 
 Route::apiResource('/cabins', CabinController::class);
 
-
+// Route::get(/cab)
 Route::post('/cabins', 
         [CabinController::class, 'store']) -> name('cabins.store');

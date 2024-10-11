@@ -14,7 +14,8 @@ class CabinController extends Controller
      */
     public function index()
     {
-        return "Hola mundo";
+        $cabin = Cabin::orderBy('id', 'asc')->get();
+        return response()->json(['data' => $cabin], 200);
     }
 
     /**
@@ -38,7 +39,7 @@ class CabinController extends Controller
      */
     public function show(Cabin $cabin)
     {
-        //
+        return response()->json(['data' => $cabin], 200);
     }
 
     /**
