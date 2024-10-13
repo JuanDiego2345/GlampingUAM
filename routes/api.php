@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CabinController;
+use App\Http\Controllers\ReserveController;
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
 // })->middleware('auth:sanctum');
@@ -16,3 +17,7 @@ Route::apiResource('/cabins', CabinController::class);
 // Route::get(/cab)
 Route::post('/cabins', 
         [CabinController::class, 'store']) -> name('cabins.store');
+
+
+
+Route::apiResource('/reserves', ReserveController::class);
