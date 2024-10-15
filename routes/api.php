@@ -2,8 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CabinController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\ServiceCabinController;
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
 // })->middleware('auth:sanctum');
@@ -12,12 +14,15 @@ use App\Http\Controllers\ReserveController;
 //         [CabinController::class, 
 //         'index']) -> name('hola.locos');
 
+Route::apiResource('/serviceCabin', ServiceCabinController::class);
+Route::apiResource('/services', ServiceController::class);
 Route::apiResource('/cabins', CabinController::class);
 
 // Route::get(/cab)
-Route::post('/cabins', 
-        [CabinController::class, 'store']) -> name('cabins.store');
+// Route::post('/cabins', 
+//         [CabinController::class, 'store']) -> name('cabins.store');
 
 
 
 Route::apiResource('/reserves', ReserveController::class);
+

@@ -14,13 +14,13 @@ class cabinLevelSeeder extends Seeder
     public function run(): void
     {
         DB::table('cabin_levels')->insert([
-            'name' => "VIP",
+            'name' => "Vieipi",
             'color' => "ff0000",
             'description' => "Cabañas para gente con mucho dinero (trafico de activos)"
         ]);
 
         DB::table('cabin_levels')->insert([
-            'name' => "Basic",
+            'name' => "Baeisic",
             'color' => "ff0000",
             'description' => "Cabañas para gente con poco dinero"
         ]);

@@ -16,18 +16,20 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
 
-        CabinLevel::factory()->count(10)->create();
+        // CabinLevel::factory()->count(10)->create();
 
         $this->call([
-            UserSeeder::class,
-            CabinLevelSeeder::class,
-            CabinSeeder::class,
-            ReserveSeeder::class,
+            // UserSeeder::class,
+            // CabinLevelSeeder::class,
+            // CabinSeeder::class,
+            // ReserveSeeder::class,
+            // ServiceSeeder::class
+            // ServiceCabinSeeder::class
         ]);
     }
 }
