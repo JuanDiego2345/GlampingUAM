@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+
         Schema::create('cabin_levels', function (Blueprint $table) {
             $table->id();
             $table->string('name', length: 50)->unique();

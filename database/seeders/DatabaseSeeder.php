@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use App\Models\CabinLevel;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
