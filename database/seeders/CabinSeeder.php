@@ -5,10 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
-=======
 
->>>>>>> c8a776401f09a7ce4eea18798178cb4daa47f8b1
 
 class CabinSeeder extends Seeder
 {
@@ -30,7 +27,6 @@ class CabinSeeder extends Seeder
     //     ]);
     // }
     {
-<<<<<<< HEAD
         DB::table('cabins')->insert([
             'name' => 'Cabin10',
             'cabinLevel_id' => 1,
@@ -43,7 +39,6 @@ class CabinSeeder extends Seeder
             'capacity' => 6,
         ]);
     }
-=======
     DB::table('cabins')->insert([
         'name' => 'Cabin3',
         'cabinLevel_id' => 35,
@@ -57,6 +52,5 @@ class CabinSeeder extends Seeder
         ]);
 
     }   
->>>>>>> c8a776401f09a7ce4eea18798178cb4daa47f8b1
 }
        

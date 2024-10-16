@@ -5,11 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
-=======
 
 
->>>>>>> c8a776401f09a7ce4eea18798178cb4daa47f8b1
 class ReserveSeeder extends Seeder
 {
     /**
