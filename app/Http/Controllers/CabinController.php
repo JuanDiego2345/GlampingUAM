@@ -73,7 +73,7 @@ class CabinController extends Controller
             'name' => 'required|string|max:50',
             'capacity' => 'required|integer|min:1',
             'cabinLevel_id' => 'required|integer|min:0',
-        ]);
+        ]);  
 
         // Actualizar la cabaña con los datos validados
         $cabin->update($validatedData);
