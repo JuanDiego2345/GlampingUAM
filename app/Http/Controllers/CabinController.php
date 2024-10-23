@@ -12,10 +12,31 @@ class CabinController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $cabin = Cabin::orderBy('id', 'asc')->get();
-        return response()->json(['data' => $cabin], 200);
+        
+
+        $sort = $request->input('sort', 'name');
+        $type = $request->input('type', 'asc');
+
+        $validSort = ["name", "cabinlevel_id", "capacity"];
+
+        if(! in_array($sort, $validSort)){
+                $message = "Invalid sort field: &sort";
+                return response()->json(['error' => $message], 400);
+        }
+
+        $validType = ['asc', 'desc'];
+
+        if(! in_array($type, $validType)){
+            $message = "Invalid type field: &type";
+            
+            return response()->json(['error' => $message], 400);
+        }
+
+        $cabins = Cabin::orderBy($sort, $type)->get();
+
+        return response()->json(['data' => $cabins], 200);
     }
 
     /**
