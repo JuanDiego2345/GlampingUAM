@@ -24,6 +24,5 @@ Route::apiResource('/users', UserController::class);
 //         [CabinController::class, 'store']) -> name('cabins.store');
 
 
-
 Route::apiResource('/reserves', ReserveController::class);
 
