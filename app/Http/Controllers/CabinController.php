@@ -10,7 +10,7 @@ class CabinController extends Controller
 
 
     /**
-     * Display a listing of the resource.
+     * Mostrar una lista de los recursos.
      */
     public function index(Request $request)
     {
@@ -22,14 +22,14 @@ class CabinController extends Controller
         $validSort = ["name", "cabinlevel_id", "capacity"];
 
         if(! in_array($sort, $validSort)){
-                $message = "Invalid sort field: &sort";
+                $message = "Campo de ordenación no válido: &sort";
                 return response()->json(['error' => $message], 400);
         }
 
         $validType = ['asc', 'desc'];
 
         if(! in_array($type, $validType)){
-            $message = "Invalid type field: &type";
+            $message = "Tipo de campo no válido: &type";
             
             return response()->json(['error' => $message], 400);
         }
@@ -40,11 +40,10 @@ class CabinController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacenar un recurso recién creado en el almacenamiento.
      */
     public function store(Request $request)
     {
-
         $validatedData = $request->validate([
             'name' => 'required|string|max:50',
             'capacity' => 'required|integer|min:1',
@@ -52,11 +51,12 @@ class CabinController extends Controller
         ]);
 
         $cabin = Cabin::create($validatedData);
+
         return response()->json(['data' => $cabin], 201);
     }
 
     /**
-     * Display the specified resource.
+     * Mostrar el recurso especificado.
      */
     public function show(Cabin $cabin)
     {
@@ -64,7 +64,7 @@ class CabinController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualizar el recurso especificado en el almacenamiento.
      */
     public function update(Request $request, Cabin $cabin)
     {
@@ -82,7 +82,7 @@ class CabinController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Eliminar el recurso especificado del almacenamiento.
      */
     public function destroy(Cabin $cabin)
     {

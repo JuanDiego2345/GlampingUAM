@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
             // CabinLevelSeeder::class,
             // CabinSeeder::class,
             // ReserveSeeder::class,
-            // ServiceSeeder::class
-            // ServiceCabinSeeder::class
+            // ServiceSeeder::class,
+            ServiceCabinSeeder::class
         ]);
     }
 }

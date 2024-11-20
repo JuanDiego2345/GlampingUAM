@@ -15,16 +15,16 @@ class ReserveSeeder extends Seeder
     public function run(): void
     {
         DB::table('reserves')->insert([
-            'user_id' => 9,
-            'cabin_id' => 5,
+            'user_id' => 13,
+            'cabin_id' => 1,
             'checkIn' => '2024-10-15',
             'checkOut' => '2024-10-20',
             'status' => false,
         ]);
 
         DB::table('reserves')->insert([
-            'user_id' => 10,
-            'cabin_id' => 6,
+            'user_id' => 13,
+            'cabin_id' => 2,
             'checkIn' => '2024-10-25',
             'checkOut' => '2024-10-30',
             'status' => true,

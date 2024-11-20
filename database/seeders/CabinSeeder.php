@@ -27,13 +27,13 @@ class CabinSeeder extends Seeder
         ]);
         DB::table('cabins')->insert([
             'name' => 'Cabin3',
-            'cabinLevel_id' => 35,
+            'cabinLevel_id' => 2,
             'capacity' => 8,
         ]);
 
         DB::table('cabins')->insert([
             'name' => 'Cabin4',
-            'cabinLevel_id' => 36,
+            'cabinLevel_id' => 1,
             'capacity' => 10,
         ]);
 
