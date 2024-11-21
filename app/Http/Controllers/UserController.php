@@ -17,19 +17,6 @@ class UserController extends Controller
         $user = User::orderBy('id', 'asc')->get();
         return response()->json(['data' => $user], 200);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    // public function create()
-    // {
-    //     $user = User::create($request->all());
-    //     return response()->json(['data' => $user], 201);
-    // }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -50,13 +37,6 @@ class UserController extends Controller
         return response()->json(['data' => $user], 200);
     }
 
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(User $user)
-    // {
-    //     //
-    // }
 
     /**
      * Update the specified resource in storage.

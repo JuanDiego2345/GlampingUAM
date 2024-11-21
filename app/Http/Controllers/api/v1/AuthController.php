@@ -48,9 +48,16 @@ class AuthController extends Controller
     }
     public function logout(Request $request)
     {
+        // Verificar si el usuario está autenticado
+        if (!$request->user()) {
+            return response()->json([
+                'message' => 'No authenticated user'
+            ], 401);
+        }
+
         $request->user()->currentAccessToken()->delete();
         return response()->json([
             'message' => 'Token revoked'
         ], 200); 
-}
+    }
 }

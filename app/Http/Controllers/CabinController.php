@@ -14,8 +14,6 @@ class CabinController extends Controller
      */
     public function index(Request $request)
     {
-        
-
         $sort = $request->input('sort', 'name');
         $type = $request->input('type', 'asc');
 
@@ -49,9 +47,7 @@ class CabinController extends Controller
             'capacity' => 'required|integer|min:1',
             'cabinLevel_id' => 'required|integer|min:0',
         ]);
-
         $cabin = Cabin::create($validatedData);
-
         return response()->json(['data' => $cabin], 201);
     }
 
